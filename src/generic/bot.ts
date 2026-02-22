@@ -102,7 +102,7 @@ export async function handleGenericMessage(params: {
       }
       messageBody = `${speaker}: [${mediaLabel}] ${ctx.content || "(no caption)"}\nMedia URL: ${ctx.mediaUrl}`;
     }
-
+    log(`generic: message body: ${messageBody}`);
     // Handle quoted/reply messages
     if (ctx.parentId) {
       messageBody = `[Replying to message ${ctx.parentId}]\n\n${messageBody}`;

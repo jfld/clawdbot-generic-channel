@@ -55,6 +55,7 @@ async function monitorWebSocket(params: {
   // Set up message handler
   wsManager.onMessageReceive = async (message: InboundMessage) => {
     try {
+      console.log(`generic: received message: ${JSON.stringify(message)}`);
       await handleGenericMessage({
         cfg,
         message,
